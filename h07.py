@@ -36,5 +36,4 @@ print(mootmised)
 #  print(f"Mängin: {albumid[lugu-1]}")  #Loendama hakkab 0-st, seega kui tahan, et nr1 mängiks
 #  #lugu 1te, siis valemisse lugu-1
 
-asd
 
