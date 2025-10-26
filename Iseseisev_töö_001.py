@@ -1,3 +1,5 @@
+import random
+
 # Iseseisev töö 001
 # 
 #  1. Koosta programm, mis kontrollib, kas kasutaja poolt sisestatud arv on paaris või paaritu
@@ -34,39 +36,65 @@
 # 	küsitakse valuuta kogust ja tehakse arvutused - 2p
 # 	kood kommenteeritud - 1p
 
-EUR = 1
-EEK = 15,6466
 
 
-print("Eurokalkulaator")
+# Harjutus 2 algus
 
-valik = input("1. EUR -> EEK\n2. EEK -> EUR\n")
+# print("Eurokalkulaator")
+# kurss = 15.6466
+# try:
 
-if valik == "1":
-    print("EUR -> EEK")
-elif valik == "2":
-    print("EEK -> EUR")
-else: 
-    print("Palun vali 1 või 2")
+#     valik = int(input("Millist valuutat soovite konverteerida?\n1. EUR -> EEK\n2. EEK -> EUR\nSisesta vastus: \n"))
+#     summa = int(input("Vali summa: "))
 
-if valik == "1":
-    summa = input("Sisesta summa: ")
-    try:
-        summa = int(summa)
-        if summa > 0:
-            vastus = summa * EEK
-            print(f"(summa) EUR = {vastus: 2f} EEK")
-        else:
-            print("Sisesta positiivne arv!")
-    except:
-        print("Sisesta ainult täisarv!")
-                
+#     if valik == 1:
+#         summa = int(summa) * kurss
+#         print(summa, "EEK")
+#     elif valik == 2:
+#         summa = int(summa) // kurss
+#         print(summa, "EUR")
+#     else:
+#         print("Valik peab olema 1 või 2, muudel juhtudel pole hetkel midagi arvutada. :)")
+# except:
+#     print("Programm läks katki!")
+        
+# # Harjutus 2 lõpp            
 
 # 3. Täringud
 # 	kuvatakse korrektne arusaadav küsimus ja hiljem vastus - 1p
 # 	kasutaja võistleb kahe täringuga arvuti vastu - 1p
 # 	kasutaja teeb pakkumise ning suurima täringupunktisumma võitja saab laual oleva raha endale - 2p
 # 	kood kommenteeritud - 1p
+
+
+
+print("Täringud!")
+
+
+try:
+    panus = float(input("Sisesta panus: €"))
+    kasutaja = random.randint(1,12)
+    arvuti = random.randint(1,12)
+
+    for i in range(1,2):
+            print(arvuti,"Arvuti", kasutaja, "Kasutaja")
+
+    if kasutaja == arvuti:
+        print("Viik,",panus, "€, tagastatakse!")
+    elif kasutaja > arvuti:
+        voitja = kasutaja
+        print("Palju õnne, sa võitsid", panus * 2, "€!")
+    elif kasutaja < arvuti:
+        voitja = arvuti
+        print("Kahjuks kaotasid", panus, "€, proovi uuesti!")
+    else:
+         print("Palun sisesta korrektne panus!")
+
+except:
+    print("Sa oled mängust bannitud!")
+
+
+
 	
 # 4. Emaili kontroll
 # 	kasutaja lisab emaili kujul enimi.pnimi@server.com - 1p
