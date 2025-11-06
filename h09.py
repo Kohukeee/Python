@@ -40,7 +40,7 @@ for i in ev_data:                                   #Toob esile sõidukid, mis s
 parim_hinnasuhe = 1000000000000
 parim_auto = ""
 
-for i in ev_data:                                  
+for i in ev_data:                                  #arvutab välja millise auto km ja hinnasuhe on parim
     if (i[1]).isnumeric()==True: 
         km_tasu = float(i[2]) / float(i[1])
         if km_tasu<parim_hinnasuhe:
