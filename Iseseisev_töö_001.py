@@ -40,23 +40,23 @@ import random
 
 # Harjutus 2 algus
 
-# print("Eurokalkulaator")
-# kurss = 15.6466
-# try:
+print("Eurokalkulaator")
+kurss = 15.6466
+try:
 
-#     valik = int(input("Millist valuutat soovite konverteerida?\n1. EUR -> EEK\n2. EEK -> EUR\nSisesta vastus: \n"))
-#     summa = int(input("Vali summa: "))
+    valik = int(input("Millist valuutat soovite konverteerida?\n1. EUR -> EEK\n2. EEK -> EUR\nSisesta vastus: \n"))
+    summa = int(input("Vali summa: "))
 
-#     if valik == 1:
-#         summa = int(summa) * kurss
-#         print(summa, "EEK")
-#     elif valik == 2:
-#         summa = int(summa) // kurss
-#         print(summa, "EUR")
-#     else:
-#         print("Valik peab olema 1 või 2, muudel juhtudel pole hetkel midagi arvutada. :)")
-# except:
-#     print("Programm läks katki!")
+    if valik == 1:
+        summa = int(summa) * kurss
+        print(summa, "EEK")
+    elif valik == 2:
+        summa = int(summa) // kurss
+        print(summa, "EUR")
+    else:
+        print("Valik peab olema 1 või 2, muudel juhtudel pole hetkel midagi arvutada. :)")
+except:
+    print("Programm läks katki!")
         
 # # Harjutus 2 lõpp            
 
@@ -68,30 +68,30 @@ import random
 
 
 
-print("Täringud!")
+# print("Täringud!")
 
 
-try:
-    panus = float(input("Sisesta panus: €"))
-    kasutaja = random.randint(1,12)
-    arvuti = random.randint(1,12)
+# try:
+#     panus = float(input("Sisesta panus: €"))
+#     kasutaja = random.randint(1,12)
+#     arvuti = random.randint(1,12)
 
-    for i in range(1,2):
-            print(arvuti,"Arvuti", kasutaja, "Kasutaja")
+#     for i in range(1,2):
+#             print(arvuti,"Arvuti", kasutaja, "Kasutaja")
 
-    if kasutaja == arvuti:
-        print("Viik,",panus, "€, tagastatakse!")
-    elif kasutaja > arvuti:
-        voitja = kasutaja
-        print("Palju õnne, sa võitsid", panus * 2, "€!")
-    elif kasutaja < arvuti:
-        voitja = arvuti
-        print("Kahjuks kaotasid", panus, "€, proovi uuesti!")
-    else:
-         print("Palun sisesta korrektne panus!")
+#     if kasutaja == arvuti:
+#         print("Viik,",panus, "€, tagastatakse!")
+#     elif kasutaja > arvuti:
+#         voitja = kasutaja
+#         print("Palju õnne, sa võitsid", panus * 2, "€!")
+#     elif kasutaja < arvuti:
+#         voitja = arvuti
+#         print("Kahjuks kaotasid", panus, "€, proovi uuesti!")
+#     else:
+#         print("Palun sisesta korrektne panus!")
 
-except:
-    print("Sa oled mängust bannitud!")
+# except:
+#     print("Sa oled mängust bannitud!")
 
 
 
