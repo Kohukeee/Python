@@ -1,7 +1,6 @@
 import turtle as t
 import random   
 
-
 # Kilpkonn
 # Kirjutada programm, mis lubab kasutajal valida kujundite tüübi 
 # (viisnurk, ring, ruut või suvaline) ja arvu. 
@@ -18,48 +17,52 @@ import random
 # [Joonistab 5 kujundit, igaüks juhuslikult valitud tüübiga suvalistesse kohtadesse]
 # Soovid jätkata?
 
-
-
-def joonista_ruut(): 
+def ruut(): 
     for i in range(4):
-        t.forward(75)
+        t.forward(100)
         t.right(90)
 
-def joonista_viisnurk():
+def viisnurk():
     for i in range(5):
-        t.forward(75)
-        t.right(72)
+        t.forward(100)
+        t.left(72)
 
-def joonista_ring():
-    t.circle(75)
+def ring():
+    t.circle(50)
+
+def suvaline():
+        random.choice([ruut, viisnurk, ring])()
 
 def joonista_kujund(valik):
     if valik == "ruut":
-        joonista_ruut()
+        ruut()
     elif valik == "viisnurk":
-        joonista_viisnurk()
+        viisnurk()
     elif valik == "ring":
-        joonista_ring()
+        ring()
     elif valik == "suvaline":
-        random.choice([joonista_ruut, joonista_viisnurk, joonista_ring])()
-    else:
-        print("Midagi on mäda!")
+        random.choice([ruut, viisnurk, ring])()
 
-kujund = input("Mida soovid joonistada?\n1. Ruut\n2. Viisnurk\n3. Ring\n4. Suvaline kujund")
-kogus = int(input("Mitu kujundit soovid joonistada:"))
+while True:
+    valik = input("Mida soovid joonistada?\n1. Ruut\n2. Viisnurk\n3. Ring\n4. Suvaline\nVastus tekstina, lõpetamiseks jäta tühjaks: ")
+    if valik == "":
+        print("Lõpetame programmi!")
+        break 
 
-for e in range(kogus):
-    if joonista_kujund == "suvaline":
-        valik = random.choice([joonista_ruut, joonista_viisnurk, joonista_ring])
-    else:
-        joonista_kujund(kujund)
+    kogus = int(input("Mitu kujundit soovid joonistada:"))
 
-
-
-
-
-t.done
-
+    for a in range(kogus):
+        t.penup()
+        x = random.randint(-200, 200)
+        y = random.randint(-200, 200)
+        t.goto(x, y)
+        t.pendown()
         
+        joonista_kujund(valik)
 
+    edasi = input("Soovid joonistada järgmise kujundi?\nJah\nEi\nVastus: ")
+    if edasi == "ei":
+        print("Lõpetame programmi!")
+        break
 
+t.done()
